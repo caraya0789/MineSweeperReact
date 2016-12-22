@@ -1,0 +1,77 @@
+.controls {
+	width: 320px;
+	margin: 20px auto;
+}
+.controls.form-inline .form-control {
+	width: 225px;
+	margin-right: 5px;
+}
+.game {
+	margin: 0 auto;
+}
+.game.s16x30 {
+	width: 320px;
+}
+.game.s16x16 {
+	width: 320px;
+}
+.game.s9x9 {
+	width: 180px;
+}
+.game .btn {
+	background: #c0c0c0;
+	padding: 0;
+	width: 20px;
+	height: 20px;
+	text-align: center;
+	line-height: 20px;
+	font-size: 14px;
+	font-weight: bold;
+	border-radius: 0px;
+	border-top:1px solid #fff;
+	border-right:1px solid #fff;
+	border-bottom:1px solid #000;
+	border-left:1px solid #000;
+}
+.game .minerow {
+	height: 20px;
+}
+.game .btn.selected {
+	border: 1px solid #9a9a9a;
+}
+.game .btn.one {
+	color: blue;
+}
+.game .btn.two {
+	color: green;
+}
+.game .btn.three {
+	color: red;
+}
+.game .btn.four {
+	color: darkblue;
+}
+.game .btn.five {
+	color: darkred;
+}
+.game .btn.six {
+	color: #118080;
+}
+.game .btn.seven {
+	color: #000;
+}
+.game .btn.eight {
+	color: #808080;
+}
+.game .btn.bomb {
+	background: url('../images/bomb.png') center no-repeat #c0c0c0;
+}
+.game .btn.bomb.wrong {
+	background: url('../images/wrong-bomb.png') center no-repeat #c0c0c0;
+}
+.game .btn.bomb.step {
+	background-color:red;
+}
+.game .btn.flag {
+	background: url('../images/flag.png') center no-repeat #c0c0c0;
+}
