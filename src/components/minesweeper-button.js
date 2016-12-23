@@ -12,27 +12,42 @@ export default class MineSweeperButton extends Component {
 	}
 
 	render() {
-		return <button onClick={this.buttonClick} className={this.state.className}>{this.state.count}</button>;
+		let classes = ['btn'];
+		let numClasses = ['empty', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight'];
+
+		if(this.props.button.selected == 1) {
+			classes.push('selected');
+		}
+
+		if(this.props.button.count != 0) {
+			classes.push(numClasses[this.props.button.count]);
+		}
+
+		if(this.props.button.bomb == 1) {
+			classes.push('bomb');
+		}
+
+		if(this.props.button.step == 1) {
+			classes.push('step');
+		}
+
+		if(this.props.button.flag == 1) {
+			classes.push('flag');
+		}
+
+		if(this.props.button.wrong == 1) {
+			classes.push('wrong');
+		}
+
+		return <button onClick={this.buttonClick} onContextMenu={this.buttonClick} className={classes.join(' ')}>{this.props.button.count}</button>;
 	}
 
-	buttonClick() {
-		let result = this.props.getValue(this.props.row, this.props.col);
-
-		let classes = ['empty', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight'];
-		if(result == 'boom') {
-			this.setState({
-				'className':'btn selected bomb step'
-			});
+	buttonClick(e) {
+		let flag = false;
+		if(e.type == 'contextmenu') {
+			e.preventDefault();
+			flag = true;
 		}
-		else if(result != 0) {
-			this.setState({
-				'count':result,
-				'className':'btn selected '+classes[result]
-			});
-		} else {
-			this.setState({
-				'className':'btn selected '+classes[result]
-			});
-		}
+		this.props.onClick(this.props.row, this.props.col, flag);
 	}
 }

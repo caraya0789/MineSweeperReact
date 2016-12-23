@@ -37,6 +37,7 @@
 	border-left:1px solid #000;
 	outline: 0 none !important;
 	cursor: default;
+	transition:none;
 }
 .game .minerow {
 	height: 20px;
